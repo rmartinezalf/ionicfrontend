@@ -1,0 +1,89 @@
+<!--
+  Generated template for the CountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>count</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <h3>Bienvenido a tu cuenta</h3>
+  
+  <ion-list >
+    <ion-item *ngFor="let option of options" (click)="selectOp(option)" >
+      {{option.option}} <br>
+      {{option.nota}}
+    </ion-item>
+  </ion-list>
+</ion-content> -->
+
+
+
+<ion-header>
+  <ion-navbar>
+    <ion-title>Action Sheets</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="action-sheets-basic-page">
+
+
+  <ion-list>
+    <ion-item *ngFor="let persona of personas; let id = index" >
+      {{persona.nombre}}
+      <a (click)="funDelete(id)">Eliminar</a>
+    </ion-item>
+  </ion-list>
+
+
+  <button ion-button block (click)="openMenu()">
+    Show Action Sheet
+  </button>
+
+  <button ion-button block (click)="showAlert()">Show Alert</button>
+
+  <button ion-button block (click)="getService()">Get my services</button>
+  <button ion-button block (click)="getArticle()">Get articles</button>
+
+  <ion-list *ngIf="listD.error == false">
+    <ion-item  *ngFor="let result of listD.data">
+         {{result.title}} <br>
+    </ion-item>
+  </ion-list>
+  <ion-list *ngIf="listC.error == false">
+    <ion-item  *ngFor="let result of listC.data">
+         {{result.nombre}} <br>
+    </ion-item>
+  </ion-list>
+
+  <form action=""></form>
+
+  <ion-list>
+
+  <ion-item>
+    <ion-label fixed>Name</ion-label>
+    <ion-input type="text" value="" [(ngModel)]="formu.name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Email</ion-label>
+    <ion-input type="email" [(ngModel)]="formu.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label fixed>Login</ion-label>
+    <ion-input type="login" [(ngModel)]="formu.login"></ion-input>
+  </ion-item>
+
+  <button ion-button block (click)="viewData(formu)">Guardar</button>
+
+  </ion-list>
+
+  <!-- Portafolio para cumplir todos los objetivos estrategicos -->
+
+
+</ion-content>
+
